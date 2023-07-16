@@ -12,10 +12,9 @@ pipeline {
     stage ('Deploy To Tomcat Server') {
       steps{
         script {
-        deploy adapters: [tomcat9(credentialsId: 'Deployer', path: '', url: 'http://34.238.172.192/:8080')], contextPath: '/web', onFailure: false, war: '**/hello-world.war'
-      }
-     }
+        deploy adapters: [tomcat9(credentialsId: 'UbuntuTomcat', path: '', url: 'http://3.145.204.215:8080/')], contextPath: '/web', war: '**/*.war'
    }
  }
 }
-
+  }
+}
